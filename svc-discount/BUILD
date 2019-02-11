@@ -4,6 +4,9 @@ load("@io_bazel_rules_scala//scala:scala.bzl", "scala_library", "scala_binary", 
 scala_binary(
     name = "svc-discount",
     srcs = glob(["*.scala"]),
-    deps = ["//lib-code"],
+    deps = [
+      "//3rdparty/jvm/com/twitter:algebird_core",
+      "//lib-code"
+    ],
     main_class = "com.thrownforaloop.discount.SvcDiscount"
 )

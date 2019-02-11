@@ -18,5 +18,22 @@ scala_repositories()
 load("@io_bazel_rules_scala//scala:toolchains.bzl", "scala_register_toolchains")
 scala_register_toolchains()
 
-# load("//3rdparty:workspace.bzl", "maven_dependencies")
-# maven_dependencies()
+
+# http_archive(
+# 	name = "trans_maven_jar",
+# 	url = "https://github.com/bazelbuild/migration-tooling/archive/master.zip",
+# 	type = "zip",
+# 	strip_prefix = "migration-tooling-master",
+# )
+
+# load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
+# git_repository(
+#     name = "bazel_deps",
+#     remote = "https://github.com/johnynek/bazel-deps.git",
+#     commit = "3fdaaa6de3ed8cf010a6b1713a04d55c4abb2592"
+# )
+
+
+
+load("//3rdparty:workspace.bzl", "maven_dependencies")
+maven_dependencies()
